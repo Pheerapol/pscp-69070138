@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# pscp gitignore structure
+*_work/
+main.py
+__pycache__/
+*.pyc
+.env
+.DS_Store

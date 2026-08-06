@@ -11,17 +11,16 @@
 ---
 
 ## 1. ข้อมูล OJ
-
 หมายเลข/ชื่อโจทย์ OJ:
 
 ```text
-OJ2996 - สลับตัวอักษร
+OJ3072 - A-E-I-O-U
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
 
 ```text
-544778
+587971
 ```
 
 สถานะ OJ:
@@ -33,7 +32,7 @@ Pass
 เวลาที่ใช้คิดและทำโจทย์ด้วยตนเอง:
 
 ```text
-0-15 minutes
+1-3 hours
 ```
 
 เลือกหนึ่งข้อ:
@@ -74,14 +73,13 @@ More than 4 weeks
 
 ```text
 input:
-รับค่าตัวอักษรเข้ามา
+ข้อความ
 
 output:
-จะเรียงสลับตัวอักษรจากขวาไปซ้าย 
+แสดงสระที่มีในข้อความพร้อมจำนวน
 
 constraints:
--
-
+เก็บสระที่มีในข้อความลงใน array
 ```
 
 ---
@@ -101,8 +99,9 @@ constraints:
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-Step 1: เขียน input รับข้อความ
-Step 2: ใช้คำสั่ง print ตัวแปรพร้อมเข้าถึง index แบบ start: stop : step เพื่อเรียงสลับตัวอักษร
+Step 1: รับ input
+Step 2: for loop ใน input แล้วเก็บสระลง array
+Step 3: for loop ใน array และแสดง output
 ```
 
 ---
@@ -122,8 +121,9 @@ Step 2: ใช้คำสั่ง print ตัวแปรพร้อมเ�
 ห้ามคัดลอกคำอธิบายจากคนอื่น
 
 ```text
-เหมือนขั้นตอนแรก แต่เพิ่ม step ถัดมาคือใช้ method .lower()
-เพื่อทำให้ตัวอักษรทุกตัวเป็นตัวพิมพ์เล็ก เนื่องจากในขั้นตอน "ความเข้าใจโจทย์" นั้นอ่านโจทย์ไม่ถี่ถ้วน
+Step 1: รับ input
+Step 2: วน loop ในข้อความหาสระแล้วเก็บลง array
+Step 3: ใช้ if เช็คว่าสระนั้นอยู่ใน array แล้วแสดง output ตามลำดับ
 ```
 
 ---
@@ -143,25 +143,33 @@ Step 2: ใช้คำสั่ง print ตัวแปรพร้อมเ�
 ทำไมเลือก case นี้:
 
 ```text
-เพื่อทดสอบว่า .lower() ทำงานได้ปกติที่ทำให้ตัวอักษรเป็นพิมพ์เล็กทุกตัว
+เช็คว่าหากมีทุกตัวอักษรโปรแกรมจะทำงานถูกต้อง
 ```
 
 Input:
 
 ```text
-PHEE
+aeiou
 ```
 
 Expected output:
 
 ```text
-eehp
+a : 1
+e : 1
+i : 1
+o : 1
+u : 1
 ```
 
 Actual output:
 
 ```text
-eehp
+a : 1
+e : 1
+i : 1
+o : 1
+u : 1
 ```
 
 Result:
@@ -175,25 +183,27 @@ Pass
 ทำไมเลือก case นี้:
 
 ```text
-เพื่อทดสอบว่าแม้มีการเว้นวรรคโปรแกรมจะยังทำงานตามปกติ และ ตัวอักษรยังเป็นพิมพ์เล็ก
+เพื่อตรวจสอบว่าหากมีการเว้นวรรคโปรแกรมจะยังทำงานถูกต้อง
 ```
 
 Input:
 
 ```text
-Hello World
+hello world
 ```
 
 Expected output:
 
 ```text
-dlrow olleh
+e : 1
+o : 2
 ```
 
 Actual output:
 
 ```text
-dlrow olleh
+e : 1
+o : 2
 ```
 
 Result:
@@ -207,26 +217,29 @@ Pass
 ทำไมเลือก case นี้:
 
 ```text
-เพื่อทดสอบว่าแม้มีตัวเลขที่เป็น string .lower() และ โปรแกรม
-ยังทำงานได้ปกติ จะยังทำงานได้ปกติ
+เพื่อตรวจสอบว่าหากมีสระพิมพ์ใหญ่มาโปรแกรมจะแสดง output ถูกต้อง
 ```
 
 Input:
 
 ```text
-paduk124
+I AM  inevitable 
 ```
 
 Expected output:
 
 ```text
-421kudap
+a : 2
+e : 2
+i : 3
 ```
 
 Actual output:
 
 ```text
-421kudap
+a : 2
+e : 2
+i : 3
 ```
 
 Result:
@@ -297,7 +310,7 @@ No
 คุณยังทำอะไรด้วยตนเอง
 
 ```text
-วางแผนเอง เขียนcodeเอง ทดสอบเอง แก้ไข้เอง ส่งเอง
+วางแผนเองเขียน code เอง ทดสอบเอง แก้ไขเอง ส่งเอง
 ```
 
 คุณคัดลอก code จากคนอื่นหรือไม่
@@ -314,10 +327,10 @@ No
 
 | Statement | Yes/No |
 |---|---|
-| I wrote this submission in my own words. |Yes |
-| I understand my final code. |Yes |
-| I recorded the real OJ status. |Yes |
-| I did not copy AI-generated text directly into this file. |Yes |
-| I did not copy code from another person. |Yes |
-| If I received human help, I disclosed it in this file. |Yes |
-| I submitted the final code to the OJ by myself. |Yes |
+| I wrote this submission in my own words. | Yes |
+| I understand my final code. | Yes |
+| I recorded the real OJ status. | Yes |
+| I did not copy AI-generated text directly into this file. | Yes |
+| I did not copy code from another person. | Yes|
+| If I received human help, I disclosed it in this file. | Yes|
+| I submitted the final code to the OJ by myself. | Yes|

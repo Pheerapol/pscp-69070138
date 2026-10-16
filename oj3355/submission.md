@@ -21,7 +21,7 @@ OJ3355 - Shorten
 OJ submission ID ถ้ามีการส่งแล้ว:
 
 ```text
-689861
+689982
 ```
 
 สถานะ OJ:
